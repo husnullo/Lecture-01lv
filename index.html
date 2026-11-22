@@ -182,16 +182,18 @@ function draw() {
             if (part) {
 
                 if (part === snake[0]) {
-                    cell.classList.add("head");
+    cell.classList.add("head");
+    cell.textContent = "🐍";
 
-                    const arrows = {
-                        up: "⬆️",
-                        down: "⬇️",
-                        left: "⬅️",
-                        right: "➡️"
-                    };
+    const rotations = {
+        up: "0deg",
+        right: "90deg",
+        down: "180deg",
+        left: "270deg"
+    };
 
-                    cell.textContent = arrows[direction];
+    cell.style.transform = `rotate(${rotations[direction]})`;
+                }
                 } else {
                     cell.classList.add("snake");
                 }
